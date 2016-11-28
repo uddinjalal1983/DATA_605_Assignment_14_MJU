@@ -1,0 +1,61 @@
+---
+title: "DATA_605_Assignment_14"
+author: "Md Jalal Uddin"
+date: "November 27, 2016"
+output: html_document
+---
+Problem: This week, we’ll work out some Taylor Series expansions of popular functions.
+(1) f(x) = 1/(1−x)
+(2) f(x) = e^x
+(3) f(x) = ln(1 + x)
+For each function, only consider its valid ranges as indicated in the notes when you are
+computing the Taylor Series expansion. Please submit your assignment as a R-Markdown
+document.
+
+Solution of Problem (1) f(x) = 1/(1−x) :
+f(x)=1/(1-x), x value is from -1 to 1
+    =1 + x + x^2 + x^3 + x^4+......
+
+```{r}
+#I will plot the curve upto x^35 where f(x)= 1 + x + x^2 + x^3 +...+x^3
+
+library(ggplot2)
+
+equation1 = function(x){1 + x + x^2 + x^3 + x^4 + x^5+x^6+x^7+x^8+ x^9 + x^10 + x^11 + x^12+x^13+x^14+x^15+x^16 + x^17 + x^18 + x^19+x^20+x^21+x^22+ x^23 + x^24 + x^25 + x^25+x^26+x^28+x^29+x^30+x^31+x^32+x^33+x^34+x^35}
+
+curve(equation1, from=-1, to=1, xlab="x", ylab="y")
+
+#So the series converges for |x|<1
+```
+
+Solution of Problem (2) f(x) = e^x
+f(x) = e^x
+     = 1+x+x^2/2!+x^3/3!+x^4/4!+......
+
+```{r}
+#I will plot the curve upto x^10/10! where f(x)=1+x+x^2/2!+x^3/3!+....+x^10/10!
+library(ggplot2)
+
+equation2 = function(x){1 + x + x^2/factorial(2) + x^3/factorial(3) + x^4/factorial(4) + x^5/factorial(5)+x^6/factorial(6)+x^7/factorial(7)+x^8/factorial(8)+ x^9/factorial(9) + x^10/factorial(10)}
+
+curve(equation2, from=-5, to=5, xlab="x", ylab="y")
+
+#So the series converges for all values of x.
+
+```
+
+Solution of Problem (3) f(x) = ln(1 + x)
+f(x) = ln(1 + x)
+     =x-x^2/2 +x^3/3 -x^4/4 +.....
+
+```{r}
+library(ggplot2)
+
+equation3 = function(x){x-x^2/2+x^3/3-x^4/4+x^5/5-x^6/6+x^7/7-x^8/8+x^9/9-x^10/10+x^11/11-x^12/12+x^13/13-x^14/14+x^15/15}
+
+curve(equation3, from=-1, to=1, xlab="x", ylab="y")
+
+#So the series converges for |x|<1
+
+```
+
